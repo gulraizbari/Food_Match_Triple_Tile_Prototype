@@ -42,7 +42,7 @@ namespace TripleTileMatch.Controllers
              var tile = _tilesData.TilesDataList[index];
              var tileAsset = LoadAssetAtPath(tile.Name);
              var randomPosition = GenerateRandomSpawnPosition();
-             var tileInstance = Instantiate(tileAsset, randomPosition, Quaternion.identity, _tilesContainer);
+             var tileInstance = Instantiate(tileAsset, randomPosition, tileAsset.transform.rotation, _tilesContainer);
              tileInstance.Initialize(new TileDataModel()
              {
                  Name = tile.Name,
