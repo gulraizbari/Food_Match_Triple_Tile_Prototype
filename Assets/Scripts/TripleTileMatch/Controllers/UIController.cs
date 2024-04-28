@@ -13,6 +13,11 @@ namespace TripleTileMatch.Controllers
             Debug.Log("UI Controller has been initialized!");
             UIViewHandler.InitializeView();
         }
+        
+        public void EnableSettingsMenu(GameObject settingsPanel)
+        {
+            settingsPanel.SetActive(true);
+        }
 
     }
 }

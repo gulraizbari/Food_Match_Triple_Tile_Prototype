@@ -2,6 +2,7 @@ using TMPro;
 using TripleTileMatch.Interfaces;
 using TripleTileMatch.Utils.Prefs;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace TripleTileMatch.Views
 {
@@ -10,10 +11,14 @@ namespace TripleTileMatch.Views
         [SerializeField] private GameObject _mainMenuPanel;
         [SerializeField] private GameObject _levelCompletePanel;
         [SerializeField] private GameObject _levelFailPanel;
+        [SerializeField] private GameObject _settingsMenuPanel;
+        [SerializeField] private Button _settingsMenuButton;
         [SerializeField] private TextMeshProUGUI _levelNumberText;
         
         public IUIController UIControllerHandler { get; set; }
         private LevelPrefsHandler.CurrentLevelPrefs _currentLevelPrefs;
+        
+        // ask
         
         // private void Start()
         // {
@@ -37,6 +42,12 @@ namespace TripleTileMatch.Views
             SetActiveState(true);
             Debug.Log("UI View is initialized.");
             AssignCurrentLevelNumberText();
+            RegisterSettingsButton();
+        }
+
+        private void OnDisable()
+        {
+            UnRegisterSettingsButton();
         }
 
         private void SetActiveState(bool state)
@@ -72,6 +83,22 @@ namespace TripleTileMatch.Views
         {
             _mainMenuPanel.SetActive(false);
             _levelFailPanel.SetActive(true);
+        }
+        
+        public void RegisterSettingsButton()
+        {
+            UnRegisterSettingsButton();
+            _settingsMenuButton.onClick.AddListener(EnableSettingsMenuPanel);
+        }
+
+        public void UnRegisterSettingsButton()
+        {
+            _settingsMenuButton.onClick.RemoveListener(EnableSettingsMenuPanel);
+        }
+
+        private void EnableSettingsMenuPanel()
+        {
+            UIControllerHandler.EnableSettingsMenu(_settingsMenuPanel);
         }
     }
 }

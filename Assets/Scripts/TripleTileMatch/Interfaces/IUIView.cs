@@ -9,5 +9,9 @@ namespace TripleTileMatch.Interfaces
         public void EnableLevelCompletePanel();
 
         public void EnableLevelFailPanel();
+
+        public void RegisterSettingsButton();
+
+        public void UnRegisterSettingsButton();
     }
 }
