@@ -4,26 +4,27 @@ namespace TripleTileMatch.Utils.Prefs
 {
     public class AudioPrefsHandler
     {
-        public int GetSoundStatus()
+        public int GetSoundFXStatus()
         {
-            var soundStatus = PlayerPrefs.GetInt(Constants.SoundStatusConstants.SoundStatus);
+            var soundStatus = PlayerPrefs.GetInt(Constants.SoundStatusConstants.SoundFXStatus);
             return soundStatus;
         }
 
-        public void SetSoundStatus(int status)
+        public void SetSoundFXStatus(int status)
         {
-            PlayerPrefs.SetInt(Constants.SoundStatusConstants.SoundStatus, status);
+            PlayerPrefs.SetInt(Constants.SoundStatusConstants.SoundFXStatus, status);
+        }
+        
+        public int GetMusicStatus()
+        {
+            var soundStatus = PlayerPrefs.GetInt(Constants.MusicStatusConstants.MusicStatus);
+            return soundStatus;
         }
 
-        public int GetVibrationStatus()
+        public void SetMusicStatus(int status)
         {
-            var vibrationStatus = PlayerPrefs.GetInt(Constants.VibrationStatusConstants.VibrationStatus);
-            return vibrationStatus;
+            PlayerPrefs.SetInt(Constants.MusicStatusConstants.MusicStatus, status);
         }
-
-        public void SetVibrationStatus(int status)
-        {
-            PlayerPrefs.SetInt(Constants.VibrationStatusConstants.VibrationStatus, status);
-        }
+        
     }
 }

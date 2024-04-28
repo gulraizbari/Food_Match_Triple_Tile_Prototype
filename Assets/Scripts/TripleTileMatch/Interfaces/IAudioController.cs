@@ -1,11 +1,15 @@
+using UnityEngine;
+
 namespace TripleTileMatch.Interfaces
 {
     public interface IAudioController
     {
         public void Initialize();
 
-        public void ToggleSound();
+        public void ToggleSoundFX();
 
-        public void ToggleVibration();
+        public void ToggleBackgroundMusic();
+
+        public void DisableSettingsMenu(GameObject settingsMenuPanel);
     }
 }

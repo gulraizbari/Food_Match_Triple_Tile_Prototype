@@ -17,12 +17,12 @@ namespace TripleTileMatch
 
         public struct SoundStatusConstants
         {
-            public static readonly string SoundStatus = "SOUND_STATUS";
+            public static readonly string SoundFXStatus = "SOUNDFX_STATUS";
         }
 
-        public struct VibrationStatusConstants
+        public struct MusicStatusConstants
         {
-            public static readonly string VibrationStatus = "VIBRATION_STATUS";
+            public static readonly string MusicStatus = "MUSIC_STATUS";
         }
     }
 }
