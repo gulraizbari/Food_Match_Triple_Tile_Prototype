@@ -51,7 +51,7 @@ namespace TripleTileMatch.Controllers
 
         public void ReloadScene()
         {
-            int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+            var currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
             SceneManager.LoadSceneAsync(currentSceneIndex);
         }
     }
