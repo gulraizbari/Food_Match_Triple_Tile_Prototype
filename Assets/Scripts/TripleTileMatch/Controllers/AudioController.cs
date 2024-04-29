@@ -14,6 +14,7 @@ namespace TripleTileMatch.Controllers
         
         public override void Initialize()
         {
+            base.Initialize();
             _audioPrefsHandler = new AudioPrefsHandler();
             Debug.Log("Audio Controller has been Initialized!");
             _audioPrefsHandler.SetMusicStatus(1);
