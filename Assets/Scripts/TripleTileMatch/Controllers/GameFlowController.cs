@@ -10,7 +10,6 @@ namespace TripleTileMatch.Controllers
 
         private void Start()
         {
-            _gameModulesList = new List<BaseMenuModule>();
             LoadModules();
         }
 
