@@ -2,47 +2,42 @@ using TMPro;
 using TripleTileMatch.Interfaces;
 using TripleTileMatch.Utils.Prefs;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace TripleTileMatch.Views
 {
     public class UIView : MonoBehaviour, IUIView
     {
+        [Header("Panels")]
         [SerializeField] private GameObject _mainMenuPanel;
+        [SerializeField] private GameObject _settingsMenuPanel;
         [SerializeField] private GameObject _levelCompletePanel;
         [SerializeField] private GameObject _levelFailPanel;
-        [SerializeField] private GameObject _settingsMenuPanel;
+        [Header("Buttons")]
         [SerializeField] private Button _settingsMenuButton;
+        [SerializeField] private Button _playButton;
+        [SerializeField] private Button _nextButton;
+        [SerializeField] private Button _retryButton;
+        [Header("Texts")]
         [SerializeField] private TextMeshProUGUI _levelNumberText;
         
         public IUIController UIControllerHandler { get; set; }
         private LevelPrefsHandler.CurrentLevelPrefs _currentLevelPrefs;
-        
-        // ask
-        
-        // private void Start()
-        // {
-        //     if (_levelStatusPrefs.GetLevelStatus() == 1)
-        //     {
-        //         EnableLevelCompletePanel();
-        //     }
-        //     else if (_levelStatusPrefs.GetLevelStatus() == 2)
-        //     {
-        //         EnableLevelFailPanel();
-        //     }
-        //     else 
-        //     {
-        //         EnableMainMenuPanel();
-        //     }
-        // }
+        private LevelPrefsHandler.LevelStatusPrefs _levelStatusPrefs;
 
         public void InitializeView()
         {
             _currentLevelPrefs = new LevelPrefsHandler.CurrentLevelPrefs();
+            _levelStatusPrefs = new LevelPrefsHandler.LevelStatusPrefs();
             SetActiveState(true);
             Debug.Log("UI View is initialized.");
+            LevelPanelStatus();
             AssignCurrentLevelNumberText();
             RegisterSettingsButton();
+            RegisterPlayButton();
+            RegisterNextButton();
+            RegisterRetryButton();
         }
 
         private void OnDisable()
@@ -53,6 +48,22 @@ namespace TripleTileMatch.Views
         private void SetActiveState(bool state)
         {
             gameObject.SetActive(state);
+        }
+
+        public void LevelPanelStatus()
+        {
+            if (_levelStatusPrefs.GetLevelStatus() == 1)
+            {
+                EnableLevelCompletePanel();
+            }
+            else if (_levelStatusPrefs.GetLevelStatus() == 2)
+            {
+                EnableLevelFailPanel();
+            }
+            else 
+            {
+                EnableMainMenuPanel();
+            }
         }
 
         private void AssignCurrentLevelNumberText()
@@ -91,9 +102,59 @@ namespace TripleTileMatch.Views
             _settingsMenuButton.onClick.AddListener(EnableSettingsMenuPanel);
         }
 
+        public void RegisterPlayButton()
+        {
+            UnRegisterPlayButton();
+            _playButton.onClick.AddListener(DisableSettingsPanel);
+            _playButton.onClick.AddListener(LoadGameScene);
+        }
+
+        public void RegisterNextButton()
+        {
+            UnRegisterNextButton();
+            _nextButton.onClick.AddListener(LoadGameScene);
+        }
+
+        public void RegisterRetryButton()
+        {
+            UnRegisterRetryButton();
+            _retryButton.onClick.AddListener(RetryButton);
+        }
+
         public void UnRegisterSettingsButton()
         {
             _settingsMenuButton.onClick.RemoveListener(EnableSettingsMenuPanel);
+        }
+        
+        public void UnRegisterPlayButton()
+        {
+            _playButton.onClick.RemoveListener(DisableSettingsPanel);
+            _playButton.onClick.RemoveListener(LoadGameScene);
+        }
+        
+        public void UnRegisterNextButton()
+        {
+            _nextButton.onClick.RemoveListener(LoadGameScene);
+        }
+        
+        private void UnRegisterRetryButton()
+        {
+            _retryButton.onClick.RemoveListener(RetryButton);
+        }
+
+        private void LoadGameScene()
+        {
+            UIControllerHandler.LoadGameScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+
+        private void RetryButton()
+        {
+            UIControllerHandler.ReloadScene();
+        }
+        
+        private void DisableSettingsPanel()
+        {
+            _mainMenuPanel.SetActive(false);
         }
 
         private void EnableSettingsMenuPanel()

@@ -3,6 +3,8 @@ namespace TripleTileMatch.Interfaces
     public interface IUIView
     {
         public void InitializeView();
+
+        public void LevelPanelStatus();
         
         public void EnableMainMenuPanel();
 
@@ -12,6 +14,14 @@ namespace TripleTileMatch.Interfaces
 
         public void RegisterSettingsButton();
 
+        public void RegisterPlayButton();
+
+        public void RegisterNextButton();
+
         public void UnRegisterSettingsButton();
+        
+        public void UnRegisterPlayButton();
+
+        public void UnRegisterNextButton();
     }
 }

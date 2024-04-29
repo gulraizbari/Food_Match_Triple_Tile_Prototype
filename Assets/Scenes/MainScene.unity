@@ -913,10 +913,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainMenuPanel: {fileID: 352002107120767611}
+  _settingsMenuPanel: {fileID: 275439338}
   _levelCompletePanel: {fileID: 8617588105595208343}
   _levelFailPanel: {fileID: 5541978987671696763}
-  _settingsMenuPanel: {fileID: 275439338}
   _settingsMenuButton: {fileID: 352002107111031837}
+  _playButton: {fileID: 352002107434909561}
+  _nextButton: {fileID: 8617588104584823182}
+  _retryButton: {fileID: 5541978987197655339}
   _levelNumberText: {fileID: 352002107841824891}
 --- !u!1 &770695406
 GameObject:
@@ -2776,31 +2779,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 352002107434909562}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 352002107120767611}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8205169224738968824}
-        m_TargetAssemblyTypeName: TripleTileMatch.Controllers.LevelController, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &352002107434909562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3497,19 +3476,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5541978987197655340}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8205169224738968824}
-        m_TargetAssemblyTypeName: TripleTileMatch.Controllers.LevelController, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &5541978987197655340
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4004,19 +3971,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8617588104584823185}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8205169224738968824}
-        m_TargetAssemblyTypeName: TripleTileMatch.Controllers.LevelController, Assembly-CSharp
-        m_MethodName: LoadScene
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!224 &8617588104584823183
 RectTransform:
   m_ObjectHideFlags: 0

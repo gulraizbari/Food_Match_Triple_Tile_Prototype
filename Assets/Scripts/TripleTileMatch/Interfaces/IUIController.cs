@@ -7,5 +7,9 @@ namespace TripleTileMatch.Interfaces
         public void Initialize();
 
         public void EnableSettingsMenu(GameObject settingsMenu);
+
+        public void LoadGameScene(int gameSceneIndex);
+
+        public void ReloadScene();
     }
 }
