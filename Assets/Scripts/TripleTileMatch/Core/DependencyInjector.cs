@@ -29,6 +29,8 @@ namespace TripleTileMatch.Core
             _audioView.AudioControllerHandler = _audioController;
 
             _uiController.LevelControllerHandler = _levelController;
+
+            _uiController.AudioControllerHandler = _audioController;
         }
     }
 }
