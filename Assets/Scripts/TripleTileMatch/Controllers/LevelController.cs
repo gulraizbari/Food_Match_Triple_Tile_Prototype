@@ -9,7 +9,7 @@ namespace TripleTileMatch.Controllers
     {
         private LevelPrefsHandler.CurrentLevelPrefs _currentLevelPrefs;
         private LevelPrefsHandler.LevelStatusPrefs _levelStatusPrefs;
-        
+
         public override void Initialize()
         {
             base.Initialize();

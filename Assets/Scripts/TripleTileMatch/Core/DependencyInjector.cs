@@ -12,6 +12,8 @@ namespace TripleTileMatch.Core
         [Header("Audio Refs")]
         [SerializeField] private AudioController _audioController;
         [SerializeField] private AudioView _audioView;
+        [Header("Level Controller Refs")] 
+        [SerializeField] private LevelController _levelController;
 
         private void Awake()
         {
@@ -25,6 +27,8 @@ namespace TripleTileMatch.Core
             
             _audioController.AudioViewHandler = _audioView;
             _audioView.AudioControllerHandler = _audioController;
+
+            _uiController.LevelControllerHandler = _levelController;
         }
     }
 }
