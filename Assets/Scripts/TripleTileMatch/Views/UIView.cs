@@ -99,12 +99,14 @@ namespace TripleTileMatch.Views
         public void RegisterSettingsButton()
         {
             UnRegisterSettingsButton();
+            _settingsMenuButton.onClick.AddListener(PlayButtonClickSFX);
             _settingsMenuButton.onClick.AddListener(EnableSettingsMenuPanel);
         }
 
         public void RegisterPlayButton()
         {
             UnRegisterPlayButton();
+            _playButton.onClick.AddListener(PlayButtonClickSFX);
             _playButton.onClick.AddListener(DisableSettingsPanel);
             _playButton.onClick.AddListener(LoadGameScene);
         }
@@ -112,12 +114,14 @@ namespace TripleTileMatch.Views
         public void RegisterNextButton()
         {
             UnRegisterNextButton();
+            _nextButton.onClick.AddListener(PlayButtonClickSFX);
             _nextButton.onClick.AddListener(LoadGameScene);
         }
 
         public void RegisterRetryButton()
         {
             UnRegisterRetryButton();
+            _retryButton.onClick.AddListener(PlayButtonClickSFX);
             _retryButton.onClick.AddListener(RetryButton);
         }
 
@@ -137,7 +141,7 @@ namespace TripleTileMatch.Views
             _nextButton.onClick.RemoveListener(LoadGameScene);
         }
         
-        private void UnRegisterRetryButton()
+        public void UnRegisterRetryButton()
         {
             _retryButton.onClick.RemoveListener(RetryButton);
         }
@@ -155,6 +159,11 @@ namespace TripleTileMatch.Views
         private void DisableSettingsPanel()
         {
             _mainMenuPanel.SetActive(false);
+        }
+
+        private void PlayButtonClickSFX()
+        {
+            UIControllerHandler.PlayButtonClickSFX();
         }
 
         private void EnableSettingsMenuPanel()

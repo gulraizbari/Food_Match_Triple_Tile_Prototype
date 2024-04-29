@@ -11,5 +11,7 @@ namespace TripleTileMatch.Interfaces
         public void ToggleBackgroundMusic();
 
         public void DisableSettingsMenu(GameObject settingsMenuPanel);
+
+        public void PlayButtonClickSoundFX();
     }
 }

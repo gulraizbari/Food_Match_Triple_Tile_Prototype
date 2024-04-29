@@ -18,10 +18,14 @@ namespace TripleTileMatch.Interfaces
 
         public void RegisterNextButton();
 
+        public void RegisterRetryButton();
+
         public void UnRegisterSettingsButton();
         
         public void UnRegisterPlayButton();
 
         public void UnRegisterNextButton();
+
+        public void UnRegisterRetryButton();
     }
 }

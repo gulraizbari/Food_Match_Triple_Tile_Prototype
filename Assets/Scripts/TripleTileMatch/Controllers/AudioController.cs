@@ -82,9 +82,8 @@ namespace TripleTileMatch.Controllers
         private void EnableBackgroundMusic() => _backgroundMusicAudioSource.Play();
 
         private void DisableBackgroundMusic() => _backgroundMusicAudioSource.Stop();
-
-        // ask
-        private void PlayButtonClickSoundFX() => _buttonClickSoundFX.Play();
+        
+        public void PlayButtonClickSoundFX() => _buttonClickSoundFX.Play();
 
         public void DisableSettingsMenu(GameObject settingsMenuPanel)
         {

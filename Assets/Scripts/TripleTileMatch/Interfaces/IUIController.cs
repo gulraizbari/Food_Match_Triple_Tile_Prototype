@@ -11,5 +11,7 @@ namespace TripleTileMatch.Interfaces
         public void LoadGameScene(int gameSceneIndex);
 
         public void ReloadScene();
+
+        public void PlayButtonClickSFX();
     }
 }

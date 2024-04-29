@@ -1,6 +1,5 @@
 using TripleTileMatch.Interfaces;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace TripleTileMatch.Controllers
 {
@@ -8,6 +7,7 @@ namespace TripleTileMatch.Controllers
     {
         public IUIView UIViewHandler { get; set; }
         public ILevelController LevelControllerHandler { get; set; }
+        public IAudioController AudioControllerHandler { get; set; }
 
         public override void Initialize()
         {
@@ -29,6 +29,11 @@ namespace TripleTileMatch.Controllers
         public void ReloadScene()
         {
             LevelControllerHandler.ReloadScene();
+        }
+
+        public void PlayButtonClickSFX()
+        {
+            AudioControllerHandler.PlayButtonClickSoundFX();
         }
 
     }
