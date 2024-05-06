@@ -1,11 +1,10 @@
 using System.Collections.Generic;
-using UnityEngine;
+using TripleTileMatch.Core;
 
 namespace TripleTileMatch.Interfaces
 {
     public interface ITripleMerge
     {
-        public void Merge(GameObject tile, List<GameObject> holdingSlots);
+        public virtual void Merge(MergingTray mergingTray, List<ITripleMerge> mergeableObjects) {}
     }
-
 }

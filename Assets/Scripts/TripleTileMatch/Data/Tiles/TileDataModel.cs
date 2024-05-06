@@ -2,18 +2,19 @@ using UnityEngine;
 
 namespace TripleTileMatch.Data
 {
-    public class TileDataModel : MonoBehaviour
+    public class TileDataModel
     {
         public string Name;
         public Sprite Sprite;
-        public Transform Position;
+        public Transform Transform;
+        public TileType Type;
 
-        public void Initialize(TileDataModel tileDataModel)
+        public enum TileType
         {
-            Name = tileDataModel.Name;
-            Sprite = tileDataModel.Sprite;
-            Position = tileDataModel.Position;
+            None = 0,
+            Apple = 1,
+            Banana = 2,
+            Carrot = 3,
         }
     }
 }
-

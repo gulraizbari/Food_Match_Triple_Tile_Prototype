@@ -22,6 +22,8 @@ namespace TripleTileMatch.Controllers
         private float _yOffset = Constants.SpawnTileConstants.YOffset;
         private int _numberOfTiles;
         private int _iterator = 0;
+        
+        public IMergingTray MergingTrayHandler { get; set; }
 
         private void Start()
         {
@@ -56,6 +58,7 @@ namespace TripleTileMatch.Controllers
                 Sprite = tile.Sprite,
                 Transform = tileInstance.gameObject.transform,
             });
+            tileInstance.SetTileContainer(this);
             _tilesList.Add(tileInstance);
             _iterator++;
         }
@@ -75,6 +78,11 @@ namespace TripleTileMatch.Controllers
             var currentLevelDataIndex = currentLevelNumber - 1;
             _numberOfTiles = levelDataList[currentLevelDataIndex].NumberOfTiles;
             return _numberOfTiles;
+        }
+
+        public void UpdateMergingListOnTileSelection(Tile selectedTile)
+        {
+            MergingTrayHandler.UpdateGridOnSelection(selectedTile);
         }
 
         public Tile LoadAssetAtPath(string path)
