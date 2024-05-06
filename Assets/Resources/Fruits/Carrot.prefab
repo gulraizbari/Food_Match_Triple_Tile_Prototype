@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 5201258684869440184}
   - component: {fileID: 1521601961611113797}
   - component: {fileID: 6511102169746828367}
-  - component: {fileID: 134168073809335977}
-  m_Layer: 0
+  - component: {fileID: 6144929953729343274}
+  m_Layer: 3
   m_Name: Carrot
-  m_TagString: Selectable
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,7 +116,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &134168073809335977
+--- !u!114 &6144929953729343274
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,9 +125,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 5223036414294929974}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5d5291f85df64924baec3852106e7bc, type: 3}
+  m_Script: {fileID: 11500000, guid: bb8a389a0c92f4e639b491084062db08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Carrot
-  Sprite: {fileID: 21300000, guid: 62069d1a327ee4685bad4cdf82f17440, type: 3}
-  Position: {fileID: 0}
