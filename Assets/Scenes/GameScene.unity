@@ -1911,6 +1911,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2953f878d63f4df5bc7c901cbdbbdfeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _tilesContainer: {fileID: 556078877}
+  _mergingTray: {fileID: 1410615153}
 --- !u!1001 &1536891581
 PrefabInstance:
   m_ObjectHideFlags: 0
